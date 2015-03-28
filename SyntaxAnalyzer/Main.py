@@ -1,5 +1,18 @@
+import sys
+
 from hjcCompile import *
 
-compiler = CompileEngine('C:\\Users\\bizily\\Documents\Visual Studio 2012\\Projects\\Alex\\Nand2Tetris\\Ch10\\SyntaxAnalyzer\\MyProgram.txt', 'MyProgramT.txt')
+def main():
+	if len(sys.argv) == 1:
+		print("Usage: Main.py input_file\n")
+		return
 
-compiler.CompileClass()
+	inputFilePath = sys.path[0] + sys.argv[1]
+
+	compiler = CompileEngine(inputFilePath, 'MyProgramT.txt')
+
+	'''
+	compiler.CompileClass()
+	'''
+
+main()

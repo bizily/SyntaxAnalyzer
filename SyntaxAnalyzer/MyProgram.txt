@@ -1,0 +1,8 @@
+class MyClass
+{
+  // This is a comment
+  /* This is another comment */
+  /* This is
+     yet another
+     comment*/
+}
