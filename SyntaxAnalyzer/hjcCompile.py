@@ -475,7 +475,7 @@ class CompileEngine(object):
 			if '/' in tag:
 				self.xmlIndent -= 1
 
-			'''self.outputFile.Write(' ' * self.xmlIndent)'''
+			self.outputFile.Write(' ' * self.xmlIndent)
 			self.outputFile.Write(tag)
 
 			if '/' not in tag:

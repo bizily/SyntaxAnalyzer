@@ -2,17 +2,16 @@ import sys
 
 from hjcCompile import *
 
-def main():
-	if len(sys.argv) == 1:
-		print("Usage: Main.py input_file\n")
+def main(argv):
+	if len(argv) == 1:
+		print("Usage: Main.py <inputfile>")
 		return
 
-	inputFilePath = sys.path[0] + sys.argv[1]
+	inputFilePath = sys.path[0] + '\\' + argv[1]
 
 	compiler = CompileEngine(inputFilePath, 'MyProgramT.txt')
 
-	'''
 	compiler.CompileClass()
-	'''
 
-main()
+if __name__ == "__main__":
+	main(sys.argv)

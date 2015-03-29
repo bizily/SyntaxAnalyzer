@@ -10,9 +10,13 @@ class OutputFile(object):
 		self.f.write(str)
 
 	def WriteXml(self, tag, value):
-		if tag == 'symbol':
-			self.f.write("<symbol>")
-		elif tag == 'keyword':
-			self.f.write("<keyword>")
+		if tag == 'keyword':
+			self.f.write("<keyword> " + value)
+		elif tag == 'symbol':
+			self.f.write("<symbol> " + value )
+		elif tag == 'integerConstant':
+			self.f.write("<integerConstant> " + value )
+		elif tag == 'stringConstant':
+			self.f.write("<stringConstant> " + value )
 		elif tag == 'identifier':
-			self.f.write("<identifier>")
+			self.f.write("<identifier> " + value)

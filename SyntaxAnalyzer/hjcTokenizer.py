@@ -38,19 +38,35 @@ class Tokenizer(object):
 		return self.token
 
 	def TokenType(self):
-		if self.token in '+-*/&|<>=':
-			return TK_SYMBOL
-		elif self.token in ('class', 'constructor', 'function', 'method', 'field', 'static', 'var', 'int', 'char', 'boolean', 'void', 'true', 'false', 'null', 'this','let', 'do', 'if', 'else', 'while', 'return'):
+		if self.token in Keywords:
 			return TK_KEYWORD
+		elif self.token in Symbols:
+			return TK_SYMBOL
+		elif self.token[0] in Numbers:
+			return TK_INT_CONST
+		elif self.token[0] == '"':
+			return TK_STRING_CONST
 		else:
-			return NULL
+			return TK_IDENTIFIER
 
-'''
 	def Keyword(self):
+		return Keywords.index(self.token)
 
-	def KeywordStr(self):
-
-	def Identifier(self):
+	def KeywordStr(self, keyword):
+		if not keyword:
+			return Keywords[self.token]
+		else:
+			return Keywords[keyword]
 
 	def Symbol(self):
-'''
+		return self.token
+
+	def IntVal(self):
+		return int(self.token)
+
+	def StringVal(self):
+		return self.token
+
+	def Identifier(self):
+		return self.token
+
