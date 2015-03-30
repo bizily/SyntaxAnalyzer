@@ -473,13 +473,13 @@ class CompileEngine(object):
 	def _WriteXmlTag(self, tag):
 		if xml:
 			if '/' in tag:
-				self.xmlIndent -= 1
+				self.xmlIndent -= 2
 
 			self.outputFile.Write(' ' * self.xmlIndent)
 			self.outputFile.Write(tag)
 
 			if '/' not in tag:
-				self.xmlIndent += 1
+				self.xmlIndent += 2
 
 	def _WriteXml(self, tag, value):
 		if xml:

@@ -8,8 +8,9 @@ def main(argv):
 		return
 
 	inputFilePath = sys.path[0] + '\\' + argv[1]
+	outputFileName = argv[1].replace(".jack", ".xml")
 
-	compiler = CompileEngine(inputFilePath, 'MyProgramT.txt')
+	compiler = CompileEngine(inputFilePath, outputFileName)
 
 	compiler.CompileClass()
 
