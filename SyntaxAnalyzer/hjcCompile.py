@@ -4,6 +4,7 @@ hjcCompile.py -- CompileEngine class for Hack computer Jack compiler
 from hjcTokens import *
 from hjcTokenizer import *
 from hjcOutputFile import *
+from hjcError import *
 
 xml = True
 

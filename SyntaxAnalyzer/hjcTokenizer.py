@@ -122,7 +122,7 @@ class Tokenizer(object):
 				# state 2: '/*'
 				elif state == 2:
 					if char == '/':
-						state = 1
+						state = 2
 					elif char == '*':
 						state = 3
 					else:
@@ -154,6 +154,12 @@ class Tokenizer(object):
 		self.token = self.tokens[self.index]
 		self.index += 1
 		return self.token
+
+	def LineNumber(self):
+		return self.index
+
+	def LineStr(self):
+		return self.tokens[self.index]
 
 	def Advance(self):
 		# If no more tokens
